@@ -1,6 +1,6 @@
-Projet Hadoop – Analyse des accidents aux États-Unis
-Description
+# Projet Hadoop – Analyse des accidents aux États-Unis
 
+## Description
 Ce projet consiste à analyser un jeu de données volumineux sur les accidents de la route aux États-Unis à l’aide des technologies Hadoop.
 
 L’objectif est de mettre en pratique une architecture distribuée en utilisant :
@@ -9,14 +9,16 @@ HDFS pour le stockage des données,
 MapReduce pour le traitement distribué,
 YARN pour la gestion des ressources,
 Hive pour l’analyse des données en SQL.
-Données
+
+## Données
 
 Le dataset utilisé est US Accidents (Kaggle).
 
 Fichier : USA.csv
 Taille : environ 2.8 Go
 Contenu : informations sur les accidents (localisation, date, gravité, météo…)
-Structure du projet
+
+## Structure du projet
 /us_accidents/
 │
 ├── mapper_state_count.py
@@ -25,8 +27,10 @@ Structure du projet
 ├── reducer_severity_by_state.py
 ├── hive_analysis.hql
 └── README.md
-Fonctionnalités
-MapReduce
+
+## Fonctionnalités
+
+### MapReduce
 
 5 jobs ont été réalisés :
 
@@ -46,7 +50,7 @@ Analyse météo
 
 Export des résultats dans HDFS.
 
-Lancer le projet
+## Lancer le projet
 1. Charger les données dans HDFS
 hdfs dfs -put USA.csv /user/cloudera/us_accidents/input/
 2. Lancer un job MapReduce (exemple)
@@ -58,11 +62,12 @@ hadoop jar /usr/lib/hadoop-mapreduce/hadoop-streaming.jar \
   -output /user/cloudera/us_accidents/output_state_count
 3. Lancer les analyses Hive
 hive -f hive_analysis.hql
-Résultats
+
+## Résultats
 
 Les résultats sont stockés dans HDFS :
-
 /user/cloudera/us_accidents/hive_results/
-Conclusion
+
+## Conclusion
 
 Ce projet montre comment traiter et analyser des données massives avec Hadoop, en combinant MapReduce et Hive pour obtenir des résultats fiables et exploitables.
